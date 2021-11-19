@@ -15,8 +15,8 @@ class WinesStrainsTest < ApplicationSystemTestCase
     click_on "New Wines Strain"
 
     fill_in "Percentage", with: @wines_strain.percentage
-    fill_in "Strain id", with: @wines_strain.strain_id_id
-    fill_in "Wine id", with: @wines_strain.wine_id_id
+    fill_in "Strain", with: @wines_strain.strain_id
+    fill_in "Wine", with: @wines_strain.wine_id
     click_on "Create Wines strain"
 
     assert_text "Wines strain was successfully created"
@@ -28,8 +28,8 @@ class WinesStrainsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Percentage", with: @wines_strain.percentage
-    fill_in "Strain id", with: @wines_strain.strain_id_id
-    fill_in "Wine id", with: @wines_strain.wine_id_id
+    fill_in "Strain", with: @wines_strain.strain_id
+    fill_in "Wine", with: @wines_strain.wine_id
     click_on "Update Wines strain"
 
     assert_text "Wines strain was successfully updated"

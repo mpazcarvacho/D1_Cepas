@@ -17,7 +17,7 @@ class WinesStrainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create wines_strain" do
     assert_difference('WinesStrain.count') do
-      post wines_strains_url, params: { wines_strain: { percentage: @wines_strain.percentage, strain_id_id: @wines_strain.strain_id_id, wine_id_id: @wines_strain.wine_id_id } }
+      post wines_strains_url, params: { wines_strain: { percentage: @wines_strain.percentage, strain_id: @wines_strain.strain_id, wine_id: @wines_strain.wine_id } }
     end
 
     assert_redirected_to wines_strain_url(WinesStrain.last)
@@ -34,7 +34,7 @@ class WinesStrainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update wines_strain" do
-    patch wines_strain_url(@wines_strain), params: { wines_strain: { percentage: @wines_strain.percentage, strain_id_id: @wines_strain.strain_id_id, wine_id_id: @wines_strain.wine_id_id } }
+    patch wines_strain_url(@wines_strain), params: { wines_strain: { percentage: @wines_strain.percentage, strain_id: @wines_strain.strain_id, wine_id: @wines_strain.wine_id } }
     assert_redirected_to wines_strain_url(@wines_strain)
   end
 
