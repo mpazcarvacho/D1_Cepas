@@ -1,9 +1,11 @@
+<%# CHANGE THIS %>
+
 <table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Wine</th>
+      <th scope="col">Strains</th>
       <%# <th scope="col">Handle</th> %>
     </tr>
   </thead>
@@ -12,11 +14,12 @@
     <tr>
             <th scope="row"><%= wine.id %></th>
             <td><%= wine.name %></td>
+            <ul>
             <td><%  wine.wines_strains.each_with_index do |wine_strain, index| %>
-            <ul>
+            
                 <li>Cepa <%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %> </li>
-            <ul>
-            <% end %></td>
+            
+            <% end %></ul></td>
     </tr>
         <% end %>
 </table>
