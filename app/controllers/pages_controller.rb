@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
   def index
-    @wines = Wine.includes(:wines_strains).all
+    # Strains will be ordered by strain name
+    @wines = Wine.includes(:wines_strains, :strains).all.order(:name)
   end
 
 end
