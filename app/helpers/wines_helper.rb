@@ -1,6 +1,9 @@
 module WinesHelper
+
   def strains_for_select
-    Strain.order(:name).collect { |g| [g.name, g.id] }
+    
+    Strain.order(:name).map.with_index{|x| [x.name, x.id]}
+    
   end
 
 end

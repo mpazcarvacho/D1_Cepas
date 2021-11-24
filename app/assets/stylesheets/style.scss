@@ -23,15 +23,17 @@ pre {
 }
 
 a {
-  color: white;
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
 
   &:visited {
-    color: white;
+    color: grey;
   }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: rgb(55, 1, 58);
   }
 }
 
@@ -100,7 +102,8 @@ label {
 }
 
 .btn_red:hover,
-.btn_red:active {
+.btn_red:active,
+.btn_red:visited {
   background-color: #d9534f;
   color: white;
 }
