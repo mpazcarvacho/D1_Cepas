@@ -1,5 +1,6 @@
 class WinesStrainsController < ApplicationController
   before_action :set_wines_strain, only: %i[ show edit update destroy ]
+  before_action :validate_percentage, only: [:create]
 
   # GET /wines_strains or /wines_strains.json
   def index
@@ -60,6 +61,10 @@ class WinesStrainsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_wines_strain
       @wines_strain = WinesStrain.find(params[:id])
+    end
+
+    def validate_percentage
+      puts 'yes'
     end
 
     # Only allow a list of trusted parameters through.
