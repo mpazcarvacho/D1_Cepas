@@ -1,28 +1,32 @@
-<%= form_with(model: wine, local: true) do |form| %>
-  <% if wine.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+<div class="mt-3 form-control">
 
-      <ul>
-      <% wine.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_with(model: wine, local: true) do |form| %>
+    <% if wine.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+
+        <ul>
+        <% wine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group mb-3" >
+      <div class="btn btn-dark btn_red">
+        <%= link_to_add_association 'Add strain', form, :wines_strains, class: "btn_red" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Create Wine', :class=>'btn btn-success btn_red' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div id="wine_strains" class="form-group">
-    <div class="links form-inline">
-      <%= link_to_add_association 'Add strain', form, :wines_strains %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
