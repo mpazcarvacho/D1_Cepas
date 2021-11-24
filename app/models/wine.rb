@@ -5,7 +5,7 @@ class Wine < ApplicationRecord
   validates :name, presence: true
   validates_associated :wines_strains
 
+  # DONE add validation so percentages add up to 100
   validates_with WineValidator
   
-  # TODO add validation so percentages add up to 100
 end

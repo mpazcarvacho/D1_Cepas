@@ -25,7 +25,7 @@ class WinesController < ApplicationController
 
     respond_to do |format|
       if @wine.save
-        format.html { redirect_to @wine, notice: "Wine was successfully created." }
+        format.html { redirect_to root_path, notice: "Wine was successfully created." }
         format.json { render :show, status: :created, location: @wine }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WinesController < ApplicationController
   def update
     respond_to do |format|
       if @wine.update(wine_params)
-        format.html { redirect_to @wine, notice: "Wine was successfully updated." }
+        format.html { redirect_to root_path, notice: "Wine was successfully updated." }
         format.json { render :show, status: :ok, location: @wine }
       else
         format.html { render :edit, status: :unprocessable_entity }

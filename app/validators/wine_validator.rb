@@ -3,14 +3,14 @@ class WineValidator < ActiveModel::Validator
   def validate(record)
     
     if record.wines_strains.present?
-      puts 'RECORD BELOW!!!!!!!!!!!!!!!!!!!!!!!1_________________________________'
-      puts record.wines_strains
+
+      # puts record.wines_strains
 
       sum = 0.0
 
       record.wines_strains.each{|n| 
         sum+=n.percentage.to_f
-        puts sum
+        # puts sum
       }end
 
       if(sum == 0 || sum != 100 )
